@@ -10,12 +10,14 @@ a {
 
 #editor {
   position: absolute;
-  width: 50%%;
+  top: 40px;
+  width: 50%;
   height: 100%;
 }
 
 #markdown {
   position: absolute;
+  top: 40px;
   left: 50%;
   width: 50%;
   height: 100%;

@@ -1,7 +1,13 @@
 extends layout
 block content
-  div(id='editor')
-  div(id='markdown')
-  script
-          id = '#{id}';
-  script(src='/javascripts/doc.js')
+    div(class='navbar navbar-inverse navbar-fixed-top')
+        div(class='navbar-inner')
+            div(class='container')
+                a(class='brand', href='#') #{id}
+
+    div(class='row-fluid')
+        div(class='span6', id='editor')
+        div(class='span6', id='markdown')
+    script
+            id = '#{id}';
+    script(src='/javascripts/doc.js')
