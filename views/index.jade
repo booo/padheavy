@@ -1,0 +1,7 @@
+extends layout
+
+block content
+    form(action='/docs', method='GET')
+        input(type='text', name='id')
+        button(type='submit')
+            'Ok'
