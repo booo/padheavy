@@ -10,6 +10,7 @@ app = express()
 app.configure ->
   app.set "port", process.env.PORT or 3000
   app.set "db", process.env.DB or "none"
+  app.set "host", process.env.HOST or "127.0.0.1"
   app.set "views", __dirname + "/views"
   app.set "view engine", "jade"
   app.use express.favicon()
@@ -33,6 +34,6 @@ sharejsOptions =
 
 sharejs.attach app, sharejsOptions
 
-http.createServer(app).listen app.get("port"), ->
-  console.log "Express server listening on port " + app.get("port")
+http.createServer(app).listen app.get("port"), app.get("host"), ->
+  console.log "Express server listening on port http://#{app.get "host"}:#{app.get "port"}"
 
