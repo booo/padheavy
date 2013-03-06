@@ -27,10 +27,12 @@ $('.mode').click(function(){
   mode = $(this).text();
   if(mode != 'markdown') {
     $('#markdown').hide();
+    $('#export-btn').hide();
     $('#editor').width('100%');
   } else {
     $('#editor').width('50%');
     $('#markdown').show();
+    $('#export-btn').show();
     update();
   }
   editor.getSession().setMode("ace/mode/" + mode);
