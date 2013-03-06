@@ -9,6 +9,7 @@ app = express()
 
 app.configure ->
   app.set "port", process.env.PORT or 3000
+  app.set "db", process.env.DB or "none"
   app.set "views", __dirname + "/views"
   app.set "view engine", "jade"
   app.use express.favicon()
@@ -28,7 +29,7 @@ app.get "/", routes.index
 
 sharejsOptions =
   db:
-    type: "redis"
+    type: app.get "db"
 
 sharejs.attach app, sharejsOptions
 
