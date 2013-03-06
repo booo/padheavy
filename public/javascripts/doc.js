@@ -24,9 +24,10 @@ $('.theme').click(function(){
 $('.mode').click(function(){
   mode = $(this).text();
   if(mode != 'markdown') {
-    console.log("hide");
     $('#markdown').hide();
+    $('#editor').width('100%');
   } else {
+    $('#editor').width('50%');
     $('#markdown').show();
     update();
   }
