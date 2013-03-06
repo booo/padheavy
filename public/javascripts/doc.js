@@ -4,8 +4,10 @@ var elem = document.getElementById("markdown");
 
 var mode = 'markdown';
 var update = null;
+var id;
 
 sharejs.open(id, 'text', function(error, doc){
+  id = id;
   doc.attach_ace(editor);
   update = function(){
     if(mode == 'markdown') {
@@ -32,4 +34,15 @@ $('.mode').click(function(){
     update();
   }
   editor.getSession().setMode("ace/mode/" + mode);
+});
+
+$('#export-btn').click(function(){
+  if(mode == 'markdown') {
+    var doc = new jsPDF();
+    doc.fromHTML($('#markdown').get(0), 15, 15, {
+      'width': 170,
+      'elementHandlers': {}
+    });
+    doc.save(id + '.pdf');
+  }
 });
