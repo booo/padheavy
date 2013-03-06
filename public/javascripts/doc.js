@@ -11,3 +11,9 @@ sharejs.open(id, 'text', function(error, doc){
 
   elem.innerHTML = converter.makeHtml(doc.snapshot);
 });
+
+
+$('.theme').click(function(foo){
+  var theme = $(this).text();
+  editor.setTheme("ace/theme/" + theme);
+});
