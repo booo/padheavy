@@ -13,7 +13,12 @@ sharejs.open(id, 'text', function(error, doc){
 });
 
 
-$('.theme').click(function(foo){
+$('.theme').click(function(){
   var theme = $(this).text();
   editor.setTheme("ace/theme/" + theme);
+});
+
+$('.mode').click(function(){
+  var mode = $(this).text();
+  editor.getSession().setMode("ace/mode/" + mode);
 });

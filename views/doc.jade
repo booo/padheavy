@@ -17,8 +17,19 @@ block content
                                     a(class='theme') chaos
                                 li
                                     a(class='theme') chrome
-                        li
-                            a(href='#') Mode
+                        li(class='dropdown')
+                            a(href='#', class='dropdown-toggle',
+                            data-toggle='dropdown') Mode
+                                b(class='caret')
+                            ul(class='dropdown-menu')
+                                li
+                                    a(class='mode') javascript
+                                li
+                                    a(class='mode') coffee
+                                li
+                                    a(class='mode') c_cpp
+                                li
+                                    a(class='mode') pgsql
 
     div(class='row-fluid')
         div(class='span6', id='editor')
