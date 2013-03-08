@@ -4,14 +4,27 @@ var elem = document.getElementById("markdown");
 
 var mode = 'markdown';
 var update = null;
-var id;
+var docId;
+
+marked.setOptions({
+  gfm: true,
+  tables: true,
+  breaks: false,
+  pedantic: false,
+  sanitze: true,
+  smartLists: true,
+  langPrefix: 'language-',
+  highlight: function(code, lang) {
+    return hljs.highlightAuto(code).value;
+  }
+});
 
 sharejs.open(id, 'text', function(error, doc){
-  id = id;
+  docId = id;
   doc.attach_ace(editor);
   update = function(){
     if(mode == 'markdown') {
-      elem.innerHTML = converter.makeHtml(doc.snapshot);
+      elem.innerHTML = marked(doc.snapshot);
     }
   };
   doc.on('change', update);
@@ -45,6 +58,6 @@ $('#export-btn').click(function(){
       'width': 170,
       'elementHandlers': {}
     });
-    doc.save(id + '.pdf');
+    doc.save(docId + '.pdf');
   }
 });
