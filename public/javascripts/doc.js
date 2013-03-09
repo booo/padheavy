@@ -51,13 +51,18 @@ $('.mode').click(function(){
   editor.getSession().setMode("ace/mode/" + mode);
 });
 
-$('#export-btn').click(function(){
+$('.export').click(function(){
   if(mode == 'markdown') {
-    var doc = new jsPDF();
-    doc.fromHTML($('#markdown').get(0), 15, 15, {
-      'width': 170,
-      'elementHandlers': {}
-    });
-    doc.save(docId + '.pdf');
+    var exporter = $(this).attr('value');
+    if(exporter === 'jspdf') {
+      var doc = new jsPDF();
+      doc.fromHTML($('#markdown').get(0), 15, 15, {
+        'width': 170,
+        'elementHandlers': {}
+      });
+      doc.save(docId + '.pdf');
+    } else {
+      window.open(html2pdf().dataURI());
+    }
   }
 });
