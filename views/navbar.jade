@@ -5,23 +5,7 @@ div(class='navbar navbar-inverse navbar-fixed-top')
             div(class='nav-collapse collapse')
                 ul(class='nav')
                     include dropdown-theme
-                    li(class='dropdown')
-                        a(href='#', class='dropdown-toggle',
-                        data-toggle='dropdown') Mode
-                            b(class='caret')
-                        ul(class='dropdown-menu')
-                            li
-                                a(class='mode') markdown
-                            li
-                                a(class='mode') javascript
-                            li
-                                a(class='mode') json
-                            li
-                                a(class='mode') coffee
-                            li
-                                a(class='mode') c_cpp
-                            li
-                                a(class='mode') pgsql
+                    include dropdown-mode
                     li(class='dropdown')
                         a(href='#', class='dropdown-toggle',
                         data-toggle='dropdown') Export
