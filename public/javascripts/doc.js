@@ -32,8 +32,8 @@ sharejs.open(id, 'text', function(error, doc){
 });
 
 $('.theme').click(function(){
-  var theme = $(this).text();
-  editor.setTheme("ace/theme/" + theme);
+  var theme = $(this).attr('value');
+  editor.setTheme(theme);
 });
 
 $('.mode').click(function(){
