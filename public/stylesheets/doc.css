@@ -1,14 +1,17 @@
 #editor {
-  position: absolute;
+  position: fixed;
+  left: 0;
   top: 40px;
   width: 50%;
-  height: 100%;
+  height: 95%;
 }
 
 #markdown {
-  position: absolute;
+  position: fixed;
   top: 40px;
   left: 50%;
-  width: 50%;
-  height: 100%;
+  width: 48%;
+  height: 95%;
+  right: 0;
+  overflow: scroll;
 }
