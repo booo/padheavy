@@ -94,6 +94,10 @@ for(name in modesByName) {
   }
 }
 
+var mode = "markdown";
+editor.getSession().setMode("ace/mode/" + mode);
+
+
 marked.setOptions({
   gfm: true,
   tables: true,
