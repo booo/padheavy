@@ -135,7 +135,7 @@ $('.mode').click(function(){
     $('#export-btn').hide();
     $('#editor').width('100%');
   } else {
-    $('#editor').width('50%');
+    $('#editor').width('48%');
     $('#markdown').show();
     $('#export-btn').show();
     update();
